@@ -100,7 +100,7 @@ sudo systemctl enable mariadb
 
 ### CLONE PROJECT
 git clone https://github.com/jleelasridhar/cybersecurity-vulnerable-lab-.git<br>
-sudo mv cybersecurity-vulnerable-lab /var/www/html/
+sudo mv cybersecurity-vulnerable-lab-/var/www/html/
 
 ### PERMISSIONS
 sudo chown -R www-data:www-data /var/www/html/<br>
@@ -115,10 +115,10 @@ FLUSH PRIVILEGES;<br>
 EXIT;
 
 ### IMPORT DATABASE
-sudo mysql vulnsite < /var/www/html/cybersecurity-vulnerable-lab/vulnerable_lab.sql
+sudo mysql vulnsite < /var/www/html/cybersecurity-vulnerable-lab-/vulnerable_lab.sql
 
 ### CONFIG FIX
-sudo nano /var/www/html/cybersecurity-vulnerable-lab/config.php<br>
+sudo nano /var/www/html/cybersecurity-vulnerable-lab-/config.php<br>
 replace this :--<br>
 $conn = mysqli_connect("127.0.0.1","labuser","1234","vulnsite");
 
@@ -126,7 +126,7 @@ $conn = mysqli_connect("127.0.0.1","labuser","1234","vulnsite");
 sudo systemctl restart apache2
 
 ### RUN WEB PAGE
-http://localhost/cybersecurity-vulnerable-lab
+http://localhost/cybersecurity-vulnerable-lab-
 
 ## Educational Purpose Only
 
