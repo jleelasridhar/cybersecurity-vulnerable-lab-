@@ -1,0 +1,113 @@
+/* ===== GLOBAL HACKER THEME ===== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    font-family: 'Courier New', monospace;
+    color: #00ffff;
+}
+
+/* MATRIX CANVAS */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background: #0a0a1f;
+    box-shadow: 0 0 20px #00ffff;
+    padding-top: 30px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    color: #00ffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #b026ff;
+    box-shadow: 0 0 10px #b026ff;
+}
+
+/* MAIN CONTAINER */
+.container {
+    margin-left: 250px;
+    padding: 40px;
+}
+
+/* CARDS */
+.card {
+    background: rgba(20,20,40,0.8);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffff;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px #b026ff;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 10px 20px;
+    background: #00ffff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 0 15px #00ffff;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b026ff;
+    color: #fff;
+    box-shadow: 0 0 20px #b026ff;
+}
+
+/* FORM STYLING */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #111;
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    border-radius: 8px;
+}
+
+/* TYPING EFFECT */
+#typing {
+    color: #00ff41;
+    text-shadow: 0 0 10px #00ff41;
+}
+body {
+    animation: glowBorder 5s linear infinite;
+}
+
+@keyframes glowBorder {
+    0% { box-shadow: 0 0 20px #00ffff inset; }
+    50% { box-shadow: 0 0 40px #b026ff inset; }
+    100% { box-shadow: 0 0 20px #00ffff inset; }
+}
