@@ -88,57 +88,46 @@ Impact:
 ---
 
 ## Installation Guide
-
-🔧 REQUIREMENTS
-Before starting, install:
-
+# Before starting, install
 sudo apt update
 sudo apt install apache2 mariadb-server php php-mysql git -y
 
-⚙️ STEP 1: SERVICES START
+# SERVICES START
 sudo systemctl start apache2
 sudo systemctl start mariadb
 sudo systemctl enable apache2
 sudo systemctl enable mariadb
 
-📥 STEP 2: CLONE PROJECT
+# CLONE PROJECT
 git clone https://github.com/Farhan15914/cybersecurity-vulnerable-lab.git
-   sudo mv cybersecurity-vulnerable-lab /var/www/html/
+sudo mv cybersecurity-vulnerable-lab /var/www/html/
 
-🔐 STEP 3: PERMISSIONS
+# PERMISSIONS
 sudo chown -R www-data:www-data /var/www/html/
 sudo chmod -R 755 /var/www/html/
 
-🗄️ STEP 4: DATABASE SETUP (MOST IMPORTANT)
+# DATABASE SETUP (MOST IMPORTANT)
+sudo mysql
+CREATE DATABASE vulnsite;
+CREATE USER 'labuser'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON vulnsite.* TO 'labuser'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
 
-👉 MariaDB open:
-    sudo mysql
-👉 run this:
-   CREATE DATABASE vulnsite;
-   CREATE USER 'labuser'@'localhost' IDENTIFIED BY '1234';
-   GRANT ALL PRIVILEGES ON vulnsite.* TO 'labuser'@'localhost';
-   FLUSH PRIVILEGES;
-   EXIT;
-📂 STEP 5: IMPORT DATABASE
-
-👉 (repo lo already .sql file undi)
-
+# IMPORT DATABASE
 sudo mysql vulnsite < /var/www/html/cybersecurity-vulnerable-lab/database.sql
 
-⚙️ STEP 6: CONFIG FIX (CRITICAL)
+# CONFIG FIX
 sudo nano /var/www/html/cybersecurity-vulnerable-lab/config.php
-
-👉 replace with:
-
+replace this :--
 $conn = mysqli_connect("127.0.0.1","labuser","1234","vulnsite");
 
-🔄 STEP 7: APACHE RESTART
+# APACHE RESTART
 sudo systemctl restart apache2
 
-STEP 8: RUN PROJECT
+# RUN WEB PAGE
+http://localhost/cybersecurity-vulnerable-lab
 
-👉 Browser lo open chey:
-    http://localhost/cybersecurity-vulnerable-lab
 ## Educational Purpose Only
 
 This project was created strictly for **educational and cybersecurity training purposes**.
