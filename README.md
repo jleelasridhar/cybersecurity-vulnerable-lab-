@@ -88,25 +88,25 @@ Impact:
 ---
 
 ## Installation Guide
-# Before starting, install
+### Before starting, install
 sudo apt update
 sudo apt install apache2 mariadb-server php php-mysql git -y
 
-# SERVICES START
+### SERVICES START
 sudo systemctl start apache2
 sudo systemctl start mariadb
 sudo systemctl enable apache2
 sudo systemctl enable mariadb
 
-# CLONE PROJECT
+### CLONE PROJECT
 git clone https://github.com/Farhan15914/cybersecurity-vulnerable-lab.git
 sudo mv cybersecurity-vulnerable-lab /var/www/html/
 
-# PERMISSIONS
+### PERMISSIONS
 sudo chown -R www-data:www-data /var/www/html/
 sudo chmod -R 755 /var/www/html/
 
-# DATABASE SETUP (MOST IMPORTANT)
+### DATABASE SETUP (MOST IMPORTANT)
 sudo mysql
 CREATE DATABASE vulnsite;
 CREATE USER 'labuser'@'localhost' IDENTIFIED BY '1234';
@@ -114,18 +114,18 @@ GRANT ALL PRIVILEGES ON vulnsite.* TO 'labuser'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
 
-# IMPORT DATABASE
+### IMPORT DATABASE
 sudo mysql vulnsite < /var/www/html/cybersecurity-vulnerable-lab/database.sql
 
-# CONFIG FIX
+### CONFIG FIX
 sudo nano /var/www/html/cybersecurity-vulnerable-lab/config.php
 replace this :--
 $conn = mysqli_connect("127.0.0.1","labuser","1234","vulnsite");
 
-# APACHE RESTART
+### APACHE RESTART
 sudo systemctl restart apache2
 
-# RUN WEB PAGE
+### RUN WEB PAGE
 http://localhost/cybersecurity-vulnerable-lab
 
 ## Educational Purpose Only
