@@ -99,7 +99,7 @@ sudo systemctl enable apache2<br>
 sudo systemctl enable mariadb
 
 ### CLONE PROJECT
-git clone https://github.com/Farhan15914/cybersecurity-vulnerable-lab.git<br>
+git clone https://github.com/jleelasridhar/cybersecurity-vulnerable-lab-.git<br>
 sudo mv cybersecurity-vulnerable-lab /var/www/html/
 
 ### PERMISSIONS
