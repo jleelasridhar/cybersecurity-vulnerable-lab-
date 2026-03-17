@@ -103,7 +103,7 @@ sudo systemctl enable mariadb
 
 📥 STEP 2: CLONE PROJECT
 git clone https://github.com/Farhan15914/cybersecurity-vulnerable-lab.git
-sudo mv cybersecurity-vulnerable-lab /var/www/html/
+   sudo mv cybersecurity-vulnerable-lab /var/www/html/
 
 🔐 STEP 3: PERMISSIONS
 sudo chown -R www-data:www-data /var/www/html/
