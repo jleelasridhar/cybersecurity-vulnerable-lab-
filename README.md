@@ -89,7 +89,7 @@ Impact:
 
 ## Installation Guide
 ### Before starting, install
-sudo apt update
+sudo apt update &&
 sudo apt install apache2 mariadb-server php php-mysql git -y
 
 ### SERVICES START
